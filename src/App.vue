@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="bgBox" v-motion :initial="{ opacity: 0, y: 25 }" :enter="{ opacity: 1, y: 0 }" :duration="1000">
-      <img src="https://i.p-i.vip/43/20240915-66e6e5abe3e97.webp" alt="">
+    <div class="bgBox" v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 2, y: 0 }" :duration="1000">
+      <img class="circular-image" src="/images/pic1.jpg" alt="">
     </div>
+
 
     <div class="bgGrid">
       <div class="Grid" v-motion :initial="{ opacity: 0, y: -25 }" :enter="{ opacity: 1, y: 0 }" :duration="1000">
@@ -16,19 +17,19 @@
     <div class="main" v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1 }" :duration="1000">
       <div class="info">
         <div class="header">
-          <img src="https://i.p-i.vip/43/20240913-66e403f2331ec.webp" alt="">
+          <img src="/images/logo.png" alt="">
         </div>
 
         <div class="infoText">
           <h1>Hi,</h1>
-          <h1>I'm <span class="qn">鹊楠</span></h1>
+          <h1>这里是<span class="qn">之江网安社团</span></h1>
         </div>
       </div>
 
       <div class="typewriter">
         <i class="iconfont icon-baojiaquotation2"></i>
         <VueTyped :strings="typingTexts" :startDelay="300" :typeSpeed="100" :backSpeed="30" :loop="true"
-          :showCursor="true">
+                  :showCursor="true">
         </VueTyped>
         <i class="iconfont icon-baojiaquotation"></i>
       </div>
@@ -55,7 +56,7 @@
     </div>
 
     <div class="footer">
-      By Quenan | ©2024
+      By 之江网安社团 | ©2024
     </div>
 
     <vs-dialog overlay-blur width="550px" not-center v-model="active">
@@ -103,7 +104,7 @@
           </p>
           <p>项目已经开源：</p>
           <p><a href="https://github.com/QNquenan/homepage-for-vue3"
-              target="_blank">https://github.com/QNquenan/homepage-for-vue3</a>
+                target="_blank">https://github.com/QNquenan/homepage-for-vue3</a>
           </p>
         </vs-alert>
       </div>
@@ -153,7 +154,7 @@ export default {
       techHidden: true,
       aboutHidden: true,
       typingTexts: [
-        "你好鸭，欢迎来到我的主页！",
+        "你好鸭，欢迎来到之江网安资源站！",
         "彼方尚有荣光在，世界不止眼前的苟且，还有诗和远方",
         "累了可以在我这里歇歇脚嗷",
         "May you happy every day",
@@ -268,5 +269,13 @@ export default {
 
 <style lang="less">
 @import url(//at.alicdn.com/t/c/font_4685493_lrpbngzgvbk.css);
+.circular-image {
+  border-radius: 50%;  /* 使图片变成圆形 */
+  border: 5px solid #457B9D;  /* 圆形边框，颜色为 #457B9D，可以根据需要修改 */
+  width: 450px;  /* 设置图片的宽度，根据需要调整 */
+  height: 450px; /* 设置图片的高度，确保是一个正方形，才能保持圆形 */
+  object-fit: cover; /* 确保图片适应圆形边框 */
+}
+
 /* 阿里巴巴图标库 */
 </style>
